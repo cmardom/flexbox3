@@ -1,0 +1,47 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    background: #ff9966;
+    background: -webkit-linear-gradient(left, #ff5e62, #ff9966);
+
+}
+
+
+.contenedor {
+    margin: 0 auto;
+    background-color: whitesmoke;
+    max-width: 1000px;
+    padding: 20px 30px 20px 30px;
+
+}
+
+nav{
+    color: white;
+    background-color: #1e3cff;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+nav ul li {
+    text-align: center;
+    flex: 1;
+}
+
+nav ul li ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li ul li {
+    text-align: center;
+    flex: 1;
+}
+
+nav ul li ul li:hover{
+    display: contents;
+}
+

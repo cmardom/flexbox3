@@ -1,47 +1,196 @@
 html {
     box-sizing: border-box;
-    margin: 0;
-    background: #ff9966;
-    background: -webkit-linear-gradient(left, #ff5e62, #ff9966);
-
 }
 
+body {
+    margin:0;
+    background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f3494e, #f39e73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: "Times New Roman", serif;
+    box-sizing: border-box;
+}
 
-.contenedor {
-    margin: 0 auto;
-    background-color: whitesmoke;
+.container {
+    padding: 20px 30px 0 30px;
+    background-color: white;
+    min-height: calc( 100vh - 20px );
     max-width: 1000px;
-    padding: 20px 30px 20px 30px;
+    margin: 0 auto;
 
 }
 
-nav{
-    color: white;
-    background-color: #1e3cff;
+nav {
+    background-color: #4157ac;
 }
-
 nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    padding: 0;
     list-style: none;
+    margin: 0;
+
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
 }
 nav ul li {
-    text-align: center;
-    flex: 1;
+    padding: 1rem;
+}
+nav ul li:hover {
+    background-color: #0b1654;
 }
 
-nav ul li ul {
+
+/** Menu simple **/
+.simple ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.simple ul li{
+    text-align:center;
+    margin-bottom: 20px;
+    flex: 1;
+}
+@media screen and (min-width:768px) {
+    .simple ul {
+        flex-direction: row;
+    }
+
+}
+
+.icons ul li a {
+    display: flex;
+    justify-content:center;
+    flex:1;
+}
+
+.icons .text {
+    font-size: 1.4rem;
+}
+.icons .icon{
+    font-size: 2rem;
+    flex: 0 0 3rem;
+}
+
+
+.icons .text span {
+    font-size: 0.5rem;
+    display: block;
+    margin-top: 10px;
+}
+
+@media screen and (min-width:480px) {
+    .icons ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .icons ul li {
+        display: flex;
+        flex: 0 0 calc( 50% - 2rem);
+    }
+}
+@media screen and (min-width:768px) {
+    .icons ul li {
+        display: flex;
+        flex: 1;
+    }
+}
+
+.dropdown ul {
     display: flex;
     flex-direction: column;
 }
+@media screen and (min-width:768px) {
+    .dropdown ul {
+        flex-direction: row;
+    }
+}
+.dropdown ul li  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.dropdown ul li ul  {
+    margin-top: 1rem;
+    display: none;
+}
+.dropdown ul li:hover ul {
+    display: block;
+}
+.dropdown ul li ul li:hover{
+    background-color: #ff5e62;
+}
+@media screen and (min-width:768px) {
+    .dropdown ul li  {
+        position: relative;
+        display: flex;
+        flex: 0 1  100%;
+    }
+    .dropdown ul li ul {
+        display: none;
+        position: absolute;
+        top:100%;
+        left:0;
+    }
 
-nav ul li ul li {
-    text-align: center;
-    flex: 1;
+    .dropdown ul li:hover ul {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #ff5e62;
+        margin:0;
+    }
 }
 
-nav ul li ul li:hover{
-    display: contents;
+.social-menu ul li span{
+    display: none;
+}
+.social-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    flex:1 0 auto;
+}
+.social-menu ul li a:before {
+    font-family: "Font Awesome 5 Brands";
+}
+.social-menu ul li a[href*='facebook.com']::before {
+    content: "\f39e";
 }
 
+.social-menu ul li a[href*='twitter.com']::before {
+    content: "\f099";
+}
+.social-menu ul li a[href*='youtube.com']::before {
+    content: "\f431";
+}
+.social-menu ul li a[href*='instagram.com']::before {
+    content: "\f16d";
+}
+.social-menu ul li a[href*='pinterest.com']::before {
+    content: "\f231 ";
+}
+
+.navegacion-social-dropdown{
+    background-color: #425aa8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.navegacion-social-dropdown > nav {
+    flex: 0 0 100%;
+}
+.navegacion-social-dropdown .social-menu {
+    order: -1;
+}
+@media (min-width:768px) {
+    .navegacion-social-dropdown > nav {
+        flex: 0 0 auto;
+    }
+    .navegacion-social-dropdown .dropdown{
+        flex: 0 0 60%;
+    }
+
+}

@@ -1,17 +1,16 @@
-html {
+* {
     box-sizing: border-box;
 }
 
 body {
-    margin:0;
-    background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+    margin:0 auto;
+    background: -webkit-linear-gradient(to right, #f8585c, #f89d6e);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #f3494e, #f39e73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: "Times New Roman", serif;
-    box-sizing: border-box;
 }
 
 .container {
-    padding: 20px 30px 0 30px;
+    padding: 20px 20px 0 20px;
     background-color: white;
     min-height: calc( 100vh - 20px );
     max-width: 1000px;
@@ -25,7 +24,7 @@ nav {
 nav ul {
     padding: 0;
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
 
 }
 
@@ -41,25 +40,24 @@ nav ul li:hover {
 }
 
 
-/** Menu simple **/
-.simple ul {
+/** Menu sencillo **/
+.sencillo ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
 }
-.simple ul li{
+.sencillo ul li{
     text-align:center;
-    margin-bottom: 20px;
     flex: 1;
 }
 @media screen and (min-width:768px) {
-    .simple ul {
+    .sencillo ul {
         flex-direction: row;
     }
 
 }
-
+/*Con iconos*/
 .icons ul li a {
     display: flex;
     justify-content:center;
@@ -67,16 +65,16 @@ nav ul li:hover {
 }
 
 .icons .text {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 .icons .icon{
-    font-size: 2rem;
+    font-size: 1.5rem;
     flex: 0 0 3rem;
 }
 
 
 .icons .text span {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     display: block;
     margin-top: 10px;
 }
@@ -98,6 +96,7 @@ nav ul li:hover {
     }
 }
 
+/*dropdown*/
 .dropdown ul {
     display: flex;
     flex-direction: column;
@@ -143,9 +142,8 @@ nav ul li:hover {
     }
 }
 
-.social-menu ul li span{
-    display: none;
-}
+/*dropdown con redes sociales*/
+
 .social-menu ul {
     display: flex;
     flex-wrap: wrap;
@@ -153,6 +151,8 @@ nav ul li:hover {
 
     flex:1 0 auto;
 }
+
+/*iconos redes sociales: font awesome*/
 .social-menu ul li a:before {
     font-family: "Font Awesome 5 Brands";
 }
@@ -174,17 +174,18 @@ nav ul li:hover {
 }
 
 .navegacion-social-dropdown{
-    background-color: #425aa8;
     display: flex;
+    background-color: #425aa8;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 .navegacion-social-dropdown > nav {
-    flex: 0 0 100%;
+    flex-grow: 0 ;
+    flex-shrink: 0;
+    flex-basis: 100%;
 }
-.navegacion-social-dropdown .social-menu {
-    order: -1;
-}
+
 @media (min-width:768px) {
     .navegacion-social-dropdown > nav {
         flex: 0 0 auto;

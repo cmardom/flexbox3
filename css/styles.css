@@ -33,6 +33,7 @@ nav ul a {
 }
 nav ul li {
     padding: 1rem;
+    cursor: pointer;
 }
 nav ul li:hover {
     background-color: #0b1654;
@@ -98,18 +99,21 @@ nav ul li:hover {
 }
 
 /*desplegable*/
-.desplegable ul {
-    display: block;
-}
 @media screen and (min-width:768px) {
     .desplegable ul {
+        display: flex;
+        justify-content: space-evenly;
         flex-direction: row;
     }
 }
 
+.desplegable ul li{
+    flex-grow: 1;
+}
+
 .desplegable ul li ul  {
     margin-top: 1rem;
-    /*display: none;*/
+    width: 100%;
 }
 /*.desplegable ul li:hover ul {
     display: block;
@@ -134,21 +138,20 @@ nav ul li:hover {
     .desplegable ul li:hover ul {
         background-color: #ff5e62;
         margin:0;
+        display: block;
     }
 }
 
 /*desplegable con redes sociales*/
 
-.navegacion-social-desplegable{
-    /*display: flex;*/
+.navegacion-social-desplegable {
+    display: flex;
     background-color: #425aa8;
     justify-content: space-between;
-
 }
 
-.navegacion-social-desplegable .desplegable ul li:first-child{
-    display: flex;
-    justify-content: space-between;
+.navegacion-social-desplegable .desplegable{
+    flex-grow: 1;
 }
 
 .social-menu > ul {
@@ -162,13 +165,9 @@ nav ul li:hover {
     /*flex:1 0 auto;*/
 }
 
-
-@media (min-width:768px) {
+@media (min-width: 768px) {
     .navegacion-social-desplegable > nav {
         flex: 0 0 auto;
     }
-/*    .navegacion-social-desplegable .desplegable{
-        flex: 0 0 60%;
-    }*/
-
 }
+

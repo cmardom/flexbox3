@@ -4,8 +4,7 @@
 
 body {
     margin:0 auto;
-    background: -webkit-linear-gradient(to right, #f8585c, #f89d6e);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f3494e, #f39e73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #f3494e, #f39e73);
     font-family: "Times New Roman", serif;
 }
 
@@ -51,6 +50,8 @@ nav ul li:hover {
     text-align:center;
     flex: 1;
 }
+/******************/
+
 @media screen and (min-width:768px) {
     .sencillo ul {
         flex-direction: row;
@@ -78,7 +79,7 @@ nav ul li:hover {
     display: block;
     margin-top: 10px;
 }
-
+/******************/
 @media screen and (min-width:480px) {
     .icons ul {
         display: flex;
@@ -96,102 +97,78 @@ nav ul li:hover {
     }
 }
 
-/*dropdown*/
-.dropdown ul {
-    display: flex;
-    flex-direction: column;
+/*desplegable*/
+.desplegable ul {
+    display: block;
 }
 @media screen and (min-width:768px) {
-    .dropdown ul {
+    .desplegable ul {
         flex-direction: row;
     }
 }
-.dropdown ul li  {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-.dropdown ul li ul  {
+
+.desplegable ul li ul  {
     margin-top: 1rem;
-    display: none;
+    /*display: none;*/
 }
-.dropdown ul li:hover ul {
+/*.desplegable ul li:hover ul {
     display: block;
-}
-.dropdown ul li ul li:hover{
+}*/
+
+
+.desplegable ul li ul li:hover{
     background-color: #ff5e62;
 }
+/***********************/
 @media screen and (min-width:768px) {
-    .dropdown ul li  {
+    .desplegable ul li  {
         position: relative;
-        display: flex;
-        flex: 0 1  100%;
     }
-    .dropdown ul li ul {
+    .desplegable ul li ul {
         display: none;
         position: absolute;
         top:100%;
         left:0;
     }
 
-    .dropdown ul li:hover ul {
-        display: flex;
-        flex-wrap: wrap;
+    .desplegable ul li:hover ul {
         background-color: #ff5e62;
         margin:0;
     }
 }
 
-/*dropdown con redes sociales*/
+/*desplegable con redes sociales*/
 
-.social-menu ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-
-    flex:1 0 auto;
-}
-
-/*iconos redes sociales: font awesome*/
-.social-menu ul li a:before {
-    font-family: "Font Awesome 5 Brands";
-}
-.social-menu ul li a[href*='facebook.com']::before {
-    content: "\f39e";
-}
-
-.social-menu ul li a[href*='twitter.com']::before {
-    content: "\f099";
-}
-.social-menu ul li a[href*='youtube.com']::before {
-    content: "\f431";
-}
-.social-menu ul li a[href*='instagram.com']::before {
-    content: "\f16d";
-}
-.social-menu ul li a[href*='pinterest.com']::before {
-    content: "\f231 ";
-}
-
-.navegacion-social-dropdown{
-    display: flex;
+.navegacion-social-desplegable{
+    /*display: flex;*/
     background-color: #425aa8;
-    flex-wrap: wrap;
     justify-content: space-between;
 
 }
-.navegacion-social-dropdown > nav {
-    flex-grow: 0 ;
-    flex-shrink: 0;
-    flex-basis: 100%;
+
+.navegacion-social-desplegable .desplegable ul li:first-child{
+    display: flex;
+    justify-content: space-between;
 }
 
+.social-menu > ul {
+    margin-top: 0;
+}
+
+.social-menu ul {
+    display: flex;
+    /*flex-wrap: wrap;*/
+    justify-content: flex-end;
+    /*flex:1 0 auto;*/
+}
+
+
 @media (min-width:768px) {
-    .navegacion-social-dropdown > nav {
+    .navegacion-social-desplegable > nav {
         flex: 0 0 auto;
     }
-    .navegacion-social-dropdown .dropdown{
+/*    .navegacion-social-desplegable .desplegable{
         flex: 0 0 60%;
-    }
+    }*/
 
 }
